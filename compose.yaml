@@ -1,0 +1,26 @@
+services:
+  player-news-bot:
+    image: ${IMAGE_NAME:-player-news-discord-bot:local}
+    build:
+      context: .
+    env_file:
+      - path: .env
+        required: false
+    init: true
+    restart: unless-stopped
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    volumes:
+      - player-news-data:/data
+    ports:
+      - '127.0.0.1:${HOST_PORT:-3000}:${PORT:-3000}'
+    stop_grace_period: 60s
+
+volumes:
+  player-news-data:
+    name: ${DATA_VOLUME_NAME:-player-news-data}

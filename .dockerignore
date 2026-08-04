@@ -1,0 +1,13 @@
+.git
+.github
+.env
+.env.*
+base/
+coverage/
+data/
+dist/
+node_modules/
+*.db
+*.log
+*.sqlite
+README.md

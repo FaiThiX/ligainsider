@@ -1,0 +1,51 @@
+{
+  "name": "player-news-discord-bot",
+  "version": "0.1.0",
+  "description": "A self-hosted Discord bot and private RSS service for LigaInsider player news.",
+  "type": "module",
+  "private": false,
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx watch src/app.ts",
+    "format": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint": "eslint . --max-warnings 0",
+    "start": "node dist/app.js",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "discord",
+    "rss",
+    "football",
+    "self-hosted"
+  ],
+  "author": "FaiThiX",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^12.10.0",
+    "cheerio": "^1.1.2",
+    "discord.js": "^14.23.2",
+    "fastify": "^5.8.5",
+    "luxon": "^3.7.2",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/luxon": "^3.7.1",
+    "@types/node": "^24.10.1",
+    "@vitest/coverage-v8": "^4.1.7",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vitest": "^4.1.7"
+  }
+}
